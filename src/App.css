@@ -376,3 +376,23 @@ h1,h2,h3 { font-family:'Manrope',Arial,sans-serif; }
 }
 
 @media (max-width:760px) { .testimonial-featured .testimonial-content { padding:24px; } }
+
+.site-header { box-shadow:0 8px 24px rgba(68,41,71,.045); }
+.btn { position:relative; isolation:isolate; }
+.btn:active { transform:translateY(0) scale(.98); }
+.btn:focus-visible, .main-nav a:focus-visible, .mobile-menu-toggle:focus-visible, .mobile-faq-button:focus-visible { outline:3px solid rgba(189,0,100,.3); outline-offset:4px; }
+.hero-button { min-width:270px; box-shadow:0 13px 28px rgba(139,62,99,.24); }
+.hero-button svg { transition:transform .2s ease; }
+.hero-button:hover svg { transform:translateX(4px); }
+.hero-art img { transition:transform .45s ease, filter .45s ease; }
+.hero-art:hover img { transform:translateY(-5px); filter:drop-shadow(0 28px 22px rgba(55,21,62,.16)); }
+.hero-glow { animation:heroGlow 8s ease-in-out infinite alternate; }
+.hero-trust span { transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.hero-trust span:hover { transform:translateY(-3px); border-color:rgba(139,62,99,.2); box-shadow:0 10px 22px rgba(68,41,71,.09); }
+@keyframes heroGlow { from { transform:scale(.96); opacity:.78; } to { transform:scale(1.04); opacity:1; } }
+@media (max-width:760px) {
+  .hero-button { width:min(100%,350px); }
+  .hero-art:hover img { transform:none; }
+  .main-nav.nav-open { animation:menuReveal .18s ease-out both; }
+}
+@keyframes menuReveal { from { opacity:0; transform:translateY(-7px); } to { opacity:1; transform:translateY(0); } }
