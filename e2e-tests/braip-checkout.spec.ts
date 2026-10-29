@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
 
-test("pagina de ofertas direciona ao checkout Braip do plano selecionado", async ({ page, context }) => {
+test("botao de oferta especial leva ao plano e ao checkout Braip", async ({ page, context }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Escolha sua opção Monjarim." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Comprar o MONJARIM é fácil." })).toBeVisible();
+  await page.getByRole("link", { name: "Oferta especial" }).click();
+  await expect(page).toHaveURL(/#melhor-opcao$/);
 
   const cookieConsent = page.getByRole("button", { name: "Aceitar todos" });
   if (await cookieConsent.isVisible()) await cookieConsent.click();

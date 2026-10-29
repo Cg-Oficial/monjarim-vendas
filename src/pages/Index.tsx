@@ -142,7 +142,7 @@ function CheckoutLink({
 
 function OfferCard({ offer, compact = false }: { offer: AffiliateOffer; compact?: boolean }) {
   return (
-    <article className={`offer-card ${offer.featured ? "offer-card-featured" : ""} ${compact ? "offer-card-compact" : ""}`}>
+    <article id={offer.featured ? "melhor-opcao" : undefined} className={`offer-card ${offer.featured ? "offer-card-featured" : ""} ${compact ? "offer-card-compact" : ""}`}>
       {offer.badge ? <span className="offer-badge">{offer.badge}</span> : null}
       <div className="offer-bottle-count"><span>{offer.bottles}</span><small>{offer.bottles === 1 ? "frasco" : "frascos"}</small></div>
       <h3>{offer.name}</h3>
@@ -348,9 +348,10 @@ export default function Home() {
 
         <section className="offers-section section-pad" id="compra">
           <div className="section-heading centered">
-            <span className="eyebrow">OFERTA ESPECIAL</span>
-            <h2>Escolha sua opção Monjarim.</h2>
-            <p>Compare os planos disponíveis. Preço, frete, estoque e condições devem ser confirmados no checkout Braip antes do pagamento.</p>
+            <a className="btn btn-primary offer-special-button" href="#melhor-opcao">Oferta especial <ArrowRight size={16} /></a>
+            <h2>Comprar o MONJARIM é fácil.</h2>
+            <p>Escolha seu kit e finalize o pedido no checkout da Braip. Compare as opções e confira os preços, descontos, frete e disponibilidade antes de concluir.</p>
+            <div className="offer-selection-note"><strong>Compare e escolha a melhor opção para você.</strong><span>As condições e o estoque atual são confirmados no checkout.</span></div>
           </div>
           <div className="offers-grid">
             {primaryOffers.map((offer) => <OfferCard offer={offer} key={offer.id} />)}

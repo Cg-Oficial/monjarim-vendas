@@ -21,10 +21,10 @@ export interface AffiliateOffer {
 const affiliateId = "afi3vmxpo8";
 const checkoutId = "chew4mj1";
 const productImageByBottleCount: Record<OfferBottleCount, string> = {
-  1: "/monjarim/bundle-1.webp",
-  3: "/monjarim/bundle-3.webp",
+  1: "/monjarim/kit-1-frasco-alta-resolucao.png",
+  3: "/monjarim/kit-3-frascos-alta-resolucao.png",
   5: "/monjarim/bundle-5.webp",
-  10: "/monjarim/bundle-10.webp",
+  10: "/monjarim/kit-10-frascos-alta-resolucao.png",
 };
 
 function braipUrl(host: "ev.braip.com" | "pay.braip.co", planId: string) {
