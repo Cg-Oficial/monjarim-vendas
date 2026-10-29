@@ -63,55 +63,55 @@ const ingredients = [
 const FAQs = [
   {
     question: "O site é seguro para realizar a minha compra?",
-    answer: "Os botões desta página levam ao checkout da Braip. Antes de concluir, confira o endereço exibido, o plano, o preço, o frete e as condições da oferta. Para informações sobre pagamento, privacidade e segurança da transação, consulte os termos e os canais oficiais da Braip.",
+    answer: "Ao selecionar uma oferta, você será direcionado ao checkout da Braip. Antes de concluir o pedido, confira se o endereço é o esperado e revise o produto, o preço, o frete e as condições exibidas. Consulte os canais oficiais da Braip para informações sobre pagamento e segurança da transação. A política de garantia, quando oferecida, deve ser conferida nos termos da oferta.",
   },
   {
-    question: "O Monjarim pode causar algum efeito colateral?",
-    answer: "A resposta a suplementos pode variar entre pessoas; não é possível garantir ausência de efeitos indesejados. Leia a composição e as advertências do rótulo. Se notar uma reação, interrompa o uso e procure orientação de um profissional de saúde; em caso de sintomas intensos, busque atendimento.",
+    question: "O Monjarim causa algum efeito colateral indesejado?",
+    answer: "A tolerância pode variar de pessoa para pessoa, e não é possível garantir ausência de efeitos indesejados. Leia a composição e as advertências do rótulo. Se sentir alguma reação, interrompa o uso e procure orientação de um profissional de saúde; diante de sintomas intensos, busque atendimento.",
   },
   {
     question: "Existe alguma contraindicação para o uso?",
-    answer: "As recomendações dependem da composição, da idade e do histórico de saúde. Siga a rotulagem do fabricante e converse com um profissional de saúde antes de usar se estiver grávida ou amamentando, tiver uma condição de saúde, usar medicamentos ou tiver qualquer dúvida. Não use fora das indicações do rótulo.",
+    answer: "A adequação depende da composição, da idade e do histórico de saúde. Siga as orientações e advertências do rótulo. Se estiver grávida ou amamentando, tiver uma condição de saúde, usar medicamentos ou estiver em dúvida, converse com um profissional de saúde antes de consumir.",
   },
   {
     question: "Quanto tempo leva para ver os primeiros resultados?",
-    answer: "Não é possível prometer um prazo, uma quantidade de peso ou um resultado. A resposta varia de pessoa para pessoa e depende de diversos fatores. O Monjarim é apresentado como suplemento alimentar e não substitui orientação profissional de saúde.",
+    answer: "Não é possível garantir prazo, quantidade de peso ou resultado. A resposta varia entre pessoas e depende de diversos fatores. Consulte as informações do produto e um profissional de saúde para orientações adequadas à sua situação. Suplementos alimentares não substituem alimentação equilibrada nem acompanhamento profissional.",
   },
   {
-    question: "Existe um limite de idade para usar o Monjarim?",
-    answer: "Confira a faixa etária indicada no rótulo. Não é possível afirmar que o produto seja adequado para todas as idades; menores de idade, pessoas idosas ou quem tenha uma condição de saúde devem conversar com um profissional de saúde antes de usar.",
+    question: "Ninguém é velho demais para usar o Monjarim?",
+    answer: "A faixa etária e as orientações de uso devem ser conferidas no rótulo. Não é possível afirmar que o produto seja adequado para todas as idades ou condições de saúde. Pessoas idosas, menores de idade ou quem tenha dúvidas devem conversar com um profissional de saúde antes de usar.",
   },
   {
     question: "O Monjarim causa o chamado efeito rebote ao parar de tomar?",
-    answer: "Não há como garantir que não haverá reganho de peso após interromper uma estratégia de controle do peso. Mudanças corporais dependem de vários fatores, e esta página não promete que um suplemento previna esse efeito. Procure orientação profissional para um plano adequado à sua situação.",
+    answer: "Não há como garantir que não haverá reganho de peso após interromper o uso. Mudanças de peso dependem de diversos fatores, e esta página não afirma que o suplemento previna o efeito rebote. Para um plano de cuidado adequado, procure orientação profissional.",
   },
   {
     question: "O Monjarim é autorizado ou aprovado pela ANVISA?",
-    answer: "A página de referência não apresenta um identificador de regularização que possa ser confirmado aqui. Confira o rótulo, a identificação do fabricante e os dados atualizados nos canais oficiais antes de comprar. Por isso, esta resposta não afirma aprovação específica da ANVISA.",
+    answer: "A regularização aplicável deve ser verificada conforme a categoria do produto e as regras sanitárias vigentes. Não temos aqui dados suficientes para confirmar uma aprovação específica. Confira o rótulo, a identificação do fabricante e as informações atualizadas nos canais oficiais antes de comprar.",
   },
   {
-    question: "Como devo tomar o Monjarim?",
-    answer: "Siga a dose e as instruções do rótulo do produto e não exceda o recomendado. Esta página não acrescenta orientação de horário ou dosagem além da rotulagem. Em caso de dúvida, consulte o fabricante ou um profissional de saúde.",
+    question: "Como devo tomar o Monjarim para obter o máximo de resultados?",
+    answer: "Siga exclusivamente a dose, o modo de uso e as advertências indicados no rótulo vigente; não exceda a recomendação. Não há orientação de horário ou de associação com refeições nesta página. Se tiver dúvidas, consulte o fabricante ou um profissional de saúde.",
   },
   {
-    question: "Qual é o prazo de entrega e como acompanho meu pedido?",
-    answer: "O prazo e o valor do frete dependem do CEP, do plano e das condições apresentadas no checkout. Após a compra, consulte o e-mail de confirmação e os canais indicados pelo vendedor para obter atualizações e o código de rastreamento.",
+    question: "Qual é o prazo de entrega e como posso rastrear meu pedido?",
+    answer: "O prazo, o frete e a disponibilidade dependem do CEP, do plano e das condições apresentadas no checkout. Após a compra, consulte a confirmação do pedido e os canais informados pelo vendedor para acompanhar o envio e obter o código de rastreamento, quando disponível.",
   },
   {
     question: "Quais são as formas de pagamento disponíveis?",
-    answer: "As opções de pagamento, parcelamento e aprovação são exibidas no checkout da Braip e podem variar conforme o plano, a oferta vigente e a instituição financeira. Confira as condições antes de finalizar a compra.",
+    answer: "As formas de pagamento, o parcelamento e as condições de aprovação são apresentados no checkout da Braip e podem variar conforme a oferta e a instituição financeira. Confira os valores e as condições antes de finalizar o pedido.",
   },
   {
-    question: "O que é o C3 Reduct® e qual é o seu diferencial?",
-    answer: "O material do produto identifica o C3 Reduct® como um dos ingredientes da fórmula. Afirmações específicas sobre mecanismos, comparações quantitativas ou resultados devem ser avaliadas com base em documentação técnica e estudos aplicáveis. Para detalhes atualizados, consulte o rótulo e o fabricante.",
+    question: "O que é o ativo C3 Reduct® e qual é o seu diferencial?",
+    answer: "O material do produto identifica o C3 Reduct® como um dos ingredientes da fórmula. Para avaliar composição, quantidade e alegações específicas sobre mecanismo ou eficácia, consulte o rótulo e a documentação disponibilizada pelo fabricante. Não é possível confirmar aqui comparações de desempenho ou resultados clínicos.",
   },
   {
-    question: "Posso comprar o Monjarim em farmácias ou marketplaces?",
-    answer: "Esta página encaminha para o checkout da Braip por links de afiliado. A disponibilidade em outros canais pode variar; antes de comprar, confira a origem do vendedor, o rótulo e as condições da oferta.",
+    question: "Posso comprar o Monjarim em farmácias ou no Mercado Livre?",
+    answer: "Esta página direciona para ofertas disponíveis no checkout da Braip por meio de links de afiliado. A disponibilidade em farmácias ou marketplaces pode variar. Antes de comprar em qualquer canal, confira a identificação do vendedor, a procedência do produto, o rótulo e as condições da oferta.",
   },
   {
     question: "Por que o Monjarim é superior aos demais tratamentos do mercado?",
-    answer: "Não é possível afirmar superioridade em relação a outros tratamentos sem evidências comparativas verificáveis. Compare composição, informações de regularização e condições da oferta, e converse com um profissional de saúde. Suplementos alimentares não substituem medicamentos ou tratamentos prescritos.",
+    answer: "Não é possível afirmar que o Monjarim seja superior a outros produtos ou tratamentos sem evidências comparativas verificáveis. Compare composição, informações de regularização e condições da oferta. Suplementos alimentares não substituem medicamentos, tratamentos prescritos ou orientação de um profissional de saúde.",
   },
 ];
 
