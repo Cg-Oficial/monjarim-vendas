@@ -2,6 +2,12 @@ import { expect, test } from "@playwright/test";
 
 test("navegacao e oferta especial levam ao checkout Braip", async ({ page, context }) => {
   await page.goto("/");
+  const brokenAnchors = await page.locator('a[href^="#"]').evaluateAll((anchors) =>
+    anchors
+      .map((anchor) => anchor.getAttribute("href")?.slice(1) ?? "")
+      .filter((id) => id && !document.getElementById(id)),
+  );
+  expect(brokenAnchors).toEqual([]);
   const navigation = page.getByRole("navigation", { name: "Navegação principal" });
   await expect(navigation.getByRole("link", { name: "O Produto" })).toBeVisible();
   await expect(navigation.getByRole("link", { name: "A Fórmula" })).toBeVisible();
@@ -10,6 +16,15 @@ test("navegacao e oferta especial levam ao checkout Braip", async ({ page, conte
   await expect(page.getByRole("heading", { name: "Comprar o Monjarim é fácil." })).toBeVisible();
   await expect(page.getByText(/remarketing/i)).toHaveCount(0);
   await expect(page.locator(".special-offers-grid .offer-card")).toHaveCount(3);
+  const offerLinks = await page.locator(".offers-section .offer-buy").evaluateAll((links) => links.map((link) => (link as HTMLAnchorElement).href));
+  expect(offerLinks).toHaveLength(7);
+  for (const href of offerLinks) {
+    const checkoutUrl = new URL(href);
+    expect(checkoutUrl.hostname).toBe("ev.braip.com");
+    expect(checkoutUrl.searchParams.has("pl")).toBe(true);
+    expect(checkoutUrl.searchParams.has("ck")).toBe(true);
+    expect(checkoutUrl.searchParams.has("af")).toBe(true);
+  }
   await page.getByRole("link", { name: "Oferta especial" }).click();
   await expect(page).toHaveURL(/#melhor-opcao$/);
 
