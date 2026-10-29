@@ -322,12 +322,12 @@ export default function Home() {
         <section className="expert-section section-pad">
           <div className="expert-mark"><ShieldCheck size={30} /></div>
           <div className="expert-copy">
-            <span className="eyebrow">INFORMAÇÃO E CUIDADO</span>
-            <h2>Suplementos não substituem orientação profissional.</h2>
-            <blockquote>Antes de iniciar o uso, confira a composição e as advertências no rótulo. Se tiver uma condição de saúde, usar medicamentos ou estiver em dúvida, converse com um profissional de saúde.</blockquote>
-            <p><strong>Escolha com informação</strong><span>O uso deve seguir as orientações da rotulagem vigente.</span></p>
+            <span className="eyebrow">ORIENTAÇÃO DE SAÚDE</span>
+            <h2>Antes de usar, converse com um profissional.</h2>
+            <blockquote>Confira a composição e as advertências no rótulo. Se tiver uma condição de saúde, usar medicamentos ou estiver em dúvida, procure orientação profissional antes de iniciar o consumo.</blockquote>
+            <p><strong>Informação responsável</strong><span>O uso deve seguir as orientações da rotulagem vigente.</span></p>
           </div>
-          <div className="expert-stars" aria-hidden="true">★★★★★</div>
+          <a className="btn btn-primary expert-cta" href="#compra">Ver ofertas <ArrowRight size={16} /></a>
         </section>
 
         <section className="quality-section section-pad">
