@@ -60,6 +60,13 @@ const ingredients = [
   },
 ];
 
+const testimonials = [
+  { id: "fernando", name: "Fernando Aragão", location: "S.J. Rio Preto, SP · 38 anos", quote: "O MONJARIM foi um divisor de águas para mim. Já tinha tentado de tudo — dietas malucas, remédios caros e até cirurgia. Em 4 semanas usando Monjarim, perdi 7 kg e o inchaço diminuiu absurdamente. Minha qualidade de vida mudou completamente." },
+  { id: "maria", name: "Maria Leão", location: "Contagem, MG · 45 anos", quote: "Agradeço à equipe por esse produto incrível. Minha qualidade de vida melhorou 100% desde que comecei a usar o MONJARIM. A compulsão alimentar foi embora na primeira semana. Já indiquei para toda a família!" },
+  { id: "juliana", name: "Juliana Ferreira", location: "Rio de Janeiro, RJ · 33 anos", quote: "O MONJARIM transformou a minha vida! Eu sofria com inchaço abdominal, sensação de peso e dificuldade para controlar o apetite. Em menos de 30 dias, minhas roupas já estavam mais largas e eu me sentia muito mais leve." },
+  { id: "fernanda", name: "Fernanda Pimenta", location: "Curitiba, PR · 41 anos", quote: "Após anos lutando contra a obesidade e a frustração de não conseguir emagrecer, encontrei no MONJARIM a solução que eu precisava. Os resultados aparecem rápido e o melhor: sem efeito rebote!" },
+];
+
 const FAQs = [
   {
     question: "O site é seguro para realizar a minha compra?",
@@ -309,25 +316,33 @@ export default function Home() {
             <p>Conheça os relatos apresentados pelo anunciante.</p>
           </div>
           <div className="testimonials-grid">
-            <article className="testimonial-card testimonial-featured">
-              <div className="testimonial-content"><div className="testimonial-avatar" aria-hidden="true">FA</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“O MONJARIM foi um divisor de águas para mim. Já tinha tentado de tudo — dietas malucas, remédios caros e até cirurgia. Em 4 semanas usando Monjarim, perdi 7 kg e o inchaço diminuiu absurdamente. Minha qualidade de vida mudou completamente.”</blockquote><strong>Fernando Aragão</strong><small>S.J. Rio Preto, SP · 38 anos</small></div>
-            </article>
-            <article className="testimonial-card"><div className="testimonial-avatar" aria-hidden="true">ML</div><div className="quote-mark">“</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“Agradeço à equipe por esse produto incrível. Minha qualidade de vida melhorou 100% desde que comecei a usar o MONJARIM. A compulsão alimentar foi embora na primeira semana. Já indiquei para toda a família!”</blockquote><strong>Maria Leão</strong><small>Contagem, MG · 45 anos</small></article>
-            <article className="testimonial-card"><div className="testimonial-avatar" aria-hidden="true">JF</div><div className="quote-mark">“</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“O MONJARIM transformou a minha vida! Eu sofria com inchaço abdominal, sensação de peso e dificuldade para controlar o apetite. Em menos de 30 dias, minhas roupas já estavam mais largas e eu me sentia muito mais leve.”</blockquote><strong>Juliana Ferreira</strong><small>Rio de Janeiro, RJ · 33 anos</small></article>
-            <article className="testimonial-card"><div className="testimonial-avatar" aria-hidden="true">FP</div><div className="quote-mark">“</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“Após anos lutando contra a obesidade e a frustração de não conseguir emagrecer, encontrei no MONJARIM a solução que eu precisava. Os resultados aparecem rápido e o melhor: sem efeito rebote!”</blockquote><strong>Fernanda Pimenta</strong><small>Curitiba, PR · 41 anos</small></article>
+            {testimonials.map((testimonial) => (
+              <article className="testimonial-card" key={testimonial.id}>
+                <div className="testimonial-heading">
+                  <div className={`testimonial-photo profile-${testimonial.id}`} role="img" aria-label={`Foto de perfil de ${testimonial.name}`} />
+                  <div className="testimonial-person">
+                    <strong>{testimonial.name}</strong>
+                    <small>{testimonial.location}</small>
+                    <div className="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                  </div>
+                </div>
+                <blockquote>“{testimonial.quote}”</blockquote>
+              </article>
+            ))}
           </div>
-          <p className="testimonial-disclaimer">Relatos fornecidos pelo anunciante. Confirme a autenticidade, a autorização de uso e a documentação dos resultados antes de republicá-los como experiências verificadas.</p>
+          <p className="testimonial-disclaimer">Relatos e imagens reproduzidos conforme o material de referência enviado. A autenticidade, a autorização de uso e os resultados não foram verificados independentemente; experiências individuais podem variar.</p>
         </section>
 
         <section className="expert-section section-pad">
-          <div className="expert-mark"><ShieldCheck size={30} /></div>
+          <div className="expert-photo" role="img" aria-label="Retrato atribuído à Dra. Caliandra Marques" />
           <div className="expert-copy">
-            <span className="eyebrow">INFORMAÇÃO E CUIDADO</span>
-            <h2>Suplementos não substituem orientação profissional.</h2>
-            <blockquote>Antes de iniciar o uso, confira a composição e as advertências no rótulo. Se tiver uma condição de saúde, usar medicamentos ou estiver em dúvida, converse com um profissional de saúde.</blockquote>
-            <p><strong>Escolha com informação</strong><span>O uso deve seguir as orientações da rotulagem vigente.</span></p>
+            <span className="eyebrow">OPINIÃO ATRIBUÍDA À DRA. CALIANDRA MARQUES</span>
+            <h2>Conheça o relato apresentado na referência.</h2>
+            <blockquote>“Tive o prazer de conhecer o MONJARIM em um evento internacional de estudos do caso. Após avaliar rigorosamente sua composição, os efeitos e os estudos clínicos que embasam cada ingrediente, posso afirmar com segurança: esta fórmula é inovadora. O mecanismo de ação similar ao da tirzepatida, aliado ao uso de ativos naturais, torna o MONJARIM uma alternativa segura e eficaz para pacientes que buscam emagrecimento sustentável sem recorrer a medicamentos injetáveis.”</blockquote>
+            <p><strong>Dra. Caliandra Marques</strong><span>Terapeuta graduada especializada em análises endócrinas</span></p>
+            <p className="expert-disclaimer">Atribuição e declarações reproduzidas do material enviado; credenciais, autorização e respaldo técnico devem ser confirmados. Não substitui orientação médica.</p>
+            <a className="btn btn-primary expert-cta" href="#compra">Quero conhecer o Monjarim <ArrowRight size={17} /></a>
           </div>
-          <div className="expert-stars" aria-hidden="true">★★★★★</div>
         </section>
 
         <section className="quality-section section-pad">
