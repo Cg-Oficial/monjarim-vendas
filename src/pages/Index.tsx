@@ -63,55 +63,55 @@ const ingredients = [
 const FAQs = [
   {
     question: "O site é seguro para realizar a minha compra?",
-    answer: "Ao selecionar uma oferta, você será direcionado ao checkout da Braip. Antes de concluir o pedido, confira se o endereço é o esperado e revise o produto, o preço, o frete e as condições exibidas. Consulte os canais oficiais da Braip para informações sobre pagamento e segurança da transação. A política de garantia, quando oferecida, deve ser conferida nos termos da oferta.",
+    answer: "Ao escolher um plano, você será encaminhado ao checkout da Braip. Confira o endereço, o produto, o preço, o frete e as condições antes de pagar. Os dados da transação são tratados no ambiente da plataforma; consulte os canais oficiais da Braip para detalhes de segurança e privacidade. Garantias, quando aplicáveis, seguem as regras apresentadas no checkout.",
   },
   {
-    question: "O Monjarim causa algum efeito colateral indesejado?",
-    answer: "A tolerância pode variar de pessoa para pessoa, e não é possível garantir ausência de efeitos indesejados. Leia a composição e as advertências do rótulo. Se sentir alguma reação, interrompa o uso e procure orientação de um profissional de saúde; diante de sintomas intensos, busque atendimento.",
+    question: "O Monjarim pode causar efeitos colaterais?",
+    answer: "A resposta a suplementos pode variar, e não é possível garantir ausência de efeitos indesejados. Leia a composição e as advertências do rótulo. Se notar uma reação, suspenda o uso e procure orientação de um profissional de saúde; diante de sintomas intensos, busque atendimento.",
   },
   {
-    question: "Existe alguma contraindicação para o uso?",
-    answer: "A adequação depende da composição, da idade e do histórico de saúde. Siga as orientações e advertências do rótulo. Se estiver grávida ou amamentando, tiver uma condição de saúde, usar medicamentos ou estiver em dúvida, converse com um profissional de saúde antes de consumir.",
+    question: "Quem deve consultar um profissional antes de usar?",
+    answer: "A adequação depende da composição, da idade e do histórico de saúde. Siga o rótulo. Se estiver grávida ou amamentando, tiver alguma condição de saúde, usar medicamentos ou tiver dúvidas, converse com um profissional de saúde antes de consumir.",
   },
   {
-    question: "Quanto tempo leva para ver os primeiros resultados?",
-    answer: "Não é possível garantir prazo, quantidade de peso ou resultado. A resposta varia entre pessoas e depende de diversos fatores. Consulte as informações do produto e um profissional de saúde para orientações adequadas à sua situação. Suplementos alimentares não substituem alimentação equilibrada nem acompanhamento profissional.",
+    question: "Em quanto tempo posso esperar resultados?",
+    answer: "Não é possível prever prazo, quantidade de peso ou resultado individual. A resposta depende de vários fatores. Consulte o rótulo e um profissional de saúde para orientações adequadas ao seu caso. Suplementos alimentares não substituem alimentação equilibrada nem acompanhamento profissional.",
   },
   {
-    question: "Ninguém é velho demais para usar o Monjarim?",
-    answer: "A faixa etária e as orientações de uso devem ser conferidas no rótulo. Não é possível afirmar que o produto seja adequado para todas as idades ou condições de saúde. Pessoas idosas, menores de idade ou quem tenha dúvidas devem conversar com um profissional de saúde antes de usar.",
+    question: "Existe uma idade máxima para usar o Monjarim?",
+    answer: "Confira no rótulo a faixa etária indicada. Não é possível afirmar que o produto seja adequado para todas as idades ou condições. Pessoas idosas, menores de idade e pessoas com dúvidas sobre o uso devem conversar com um profissional de saúde.",
   },
   {
-    question: "O Monjarim causa o chamado efeito rebote ao parar de tomar?",
-    answer: "Não há como garantir que não haverá reganho de peso após interromper o uso. Mudanças de peso dependem de diversos fatores, e esta página não afirma que o suplemento previna o efeito rebote. Para um plano de cuidado adequado, procure orientação profissional.",
+    question: "O Monjarim evita o efeito rebote?",
+    answer: "Não há como garantir que não haverá reganho de peso após interromper o uso. Mudanças de peso dependem de diversos fatores, e esta página não afirma que o suplemento previna o efeito rebote. Procure orientação profissional para um plano de cuidado individualizado.",
   },
   {
-    question: "O Monjarim é autorizado ou aprovado pela ANVISA?",
-    answer: "A regularização aplicável deve ser verificada conforme a categoria do produto e as regras sanitárias vigentes. Não temos aqui dados suficientes para confirmar uma aprovação específica. Confira o rótulo, a identificação do fabricante e as informações atualizadas nos canais oficiais antes de comprar.",
+    question: "O Monjarim é regularizado ou aprovado pela ANVISA?",
+    answer: "A regularização aplicável depende da categoria do produto e das regras sanitárias vigentes. Não dispomos aqui de dados suficientes para confirmar uma aprovação específica. Confira o rótulo, os dados do fabricante e os registros ou notificações aplicáveis nos canais oficiais da ANVISA.",
   },
   {
-    question: "Como devo tomar o Monjarim para obter o máximo de resultados?",
-    answer: "Siga exclusivamente a dose, o modo de uso e as advertências indicados no rótulo vigente; não exceda a recomendação. Não há orientação de horário ou de associação com refeições nesta página. Se tiver dúvidas, consulte o fabricante ou um profissional de saúde.",
+    question: "Como devo consumir o Monjarim?",
+    answer: "Siga a dose, o modo de uso e as advertências do rótulo vigente; não exceda a recomendação. Esta página não orienta horários ou associação com refeições. Em caso de dúvida, consulte o fabricante ou um profissional de saúde.",
   },
   {
-    question: "Qual é o prazo de entrega e como posso rastrear meu pedido?",
-    answer: "O prazo, o frete e a disponibilidade dependem do CEP, do plano e das condições apresentadas no checkout. Após a compra, consulte a confirmação do pedido e os canais informados pelo vendedor para acompanhar o envio e obter o código de rastreamento, quando disponível.",
+    question: "Qual é o prazo de entrega e como acompanho o pedido?",
+    answer: "Prazo, frete e disponibilidade dependem do CEP, do plano e das condições exibidas no checkout. Depois da compra, consulte a confirmação do pedido e os canais indicados pelo vendedor para acompanhar o envio e obter o rastreamento, quando disponível.",
   },
   {
-    question: "Quais são as formas de pagamento disponíveis?",
-    answer: "As formas de pagamento, o parcelamento e as condições de aprovação são apresentados no checkout da Braip e podem variar conforme a oferta e a instituição financeira. Confira os valores e as condições antes de finalizar o pedido.",
+    question: "Quais formas de pagamento são aceitas?",
+    answer: "As formas de pagamento, o parcelamento e os critérios de aprovação são informados no checkout da Braip e podem variar conforme a oferta e a instituição financeira. Revise os valores e as condições antes de finalizar a compra.",
   },
   {
-    question: "O que é o ativo C3 Reduct® e qual é o seu diferencial?",
-    answer: "O material do produto identifica o C3 Reduct® como um dos ingredientes da fórmula. Para avaliar composição, quantidade e alegações específicas sobre mecanismo ou eficácia, consulte o rótulo e a documentação disponibilizada pelo fabricante. Não é possível confirmar aqui comparações de desempenho ou resultados clínicos.",
+    question: "O que é o C3 Reduct®?",
+    answer: "O fabricante identifica o C3 Reduct® como um ingrediente da fórmula. Para conferir a composição, a quantidade por porção e as alegações específicas sobre mecanismo ou eficácia, consulte o rótulo e a documentação técnica do fabricante. Não confirmamos aqui comparações de desempenho ou resultados clínicos.",
   },
   {
-    question: "Posso comprar o Monjarim em farmácias ou no Mercado Livre?",
-    answer: "Esta página direciona para ofertas disponíveis no checkout da Braip por meio de links de afiliado. A disponibilidade em farmácias ou marketplaces pode variar. Antes de comprar em qualquer canal, confira a identificação do vendedor, a procedência do produto, o rótulo e as condições da oferta.",
+    question: "Onde posso comprar o Monjarim?",
+    answer: "Os botões desta página direcionam a ofertas no checkout da Braip por links de afiliado. A disponibilidade em outros canais pode variar. Em qualquer compra, confira a identificação do vendedor, a procedência do produto, o rótulo e as condições da oferta.",
   },
   {
-    question: "Por que o Monjarim é superior aos demais tratamentos do mercado?",
-    answer: "Não é possível afirmar que o Monjarim seja superior a outros produtos ou tratamentos sem evidências comparativas verificáveis. Compare composição, informações de regularização e condições da oferta. Suplementos alimentares não substituem medicamentos, tratamentos prescritos ou orientação de um profissional de saúde.",
+    question: "O Monjarim é superior a outros produtos ou tratamentos?",
+    answer: "Não afirmamos superioridade sem evidências comparativas verificáveis. Compare a composição, as informações de regularização e as condições da oferta. Suplementos alimentares não substituem medicamentos, tratamentos prescritos ou orientação de um profissional de saúde.",
   },
 ];
 
@@ -304,9 +304,9 @@ export default function Home() {
 
         <section className="testimonials-section section-pad" id="depoimentos">
           <div className="section-heading centered">
-            <span className="eyebrow">RELATOS SOBRE O MONJARIM</span>
-            <h2>Histórias compartilhadas por consumidores.</h2>
-            <p>Relatos fornecidos pelo anunciante; autenticidade, autorização e resultados devem ser confirmados antes da publicação.</p>
+            <span className="eyebrow">AVALIAÇÕES DE CLIENTES</span>
+            <h2>Experiências compartilhadas sobre o Monjarim.</h2>
+            <p>Conheça os relatos apresentados pelo anunciante.</p>
           </div>
           <div className="testimonials-grid">
             <article className="testimonial-card testimonial-featured">
@@ -316,22 +316,22 @@ export default function Home() {
             <article className="testimonial-card"><div className="testimonial-avatar" aria-hidden="true">JF</div><div className="quote-mark">“</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“O MONJARIM transformou a minha vida! Eu sofria com inchaço abdominal, sensação de peso e dificuldade para controlar o apetite. Em menos de 30 dias, minhas roupas já estavam mais largas e eu me sentia muito mais leve.”</blockquote><strong>Juliana Ferreira</strong><small>Rio de Janeiro, RJ · 33 anos</small></article>
             <article className="testimonial-card"><div className="testimonial-avatar" aria-hidden="true">FP</div><div className="quote-mark">“</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“Após anos lutando contra a obesidade e a frustração de não conseguir emagrecer, encontrei no MONJARIM a solução que eu precisava. Os resultados aparecem rápido e o melhor: sem efeito rebote!”</blockquote><strong>Fernanda Pimenta</strong><small>Curitiba, PR · 41 anos</small></article>
           </div>
-          <p className="testimonial-disclaimer">Os relatos foram fornecidos pelo anunciante e não foram verificados independentemente. Resultados individuais variam.</p>
+          <p className="testimonial-disclaimer">Relatos fornecidos pelo anunciante. Confirme a autenticidade, a autorização de uso e a documentação dos resultados antes de republicá-los como experiências verificadas.</p>
         </section>
 
         <section className="expert-section section-pad">
           <div className="expert-mark"><ShieldCheck size={30} /></div>
           <div className="expert-copy">
-            <span className="eyebrow">INFORMAÇÕES SOBRE O PRODUTO</span>
-            <h2>“Tive o prazer de conhecer o Monjarim...”</h2>
-            <blockquote>“Tive o prazer de conhecer o MONJARIM em um evento internacional de estudos do caso. Após avaliar rigorosamente sua composição, os efeitos e os estudos clínicos que embasam cada ingrediente, posso afirmar com segurança: esta fórmula é inovadora. O mecanismo de ação similar ao da tirzepatida, aliado ao uso de ativos naturais, torna o MONJARIM uma alternativa segura e eficaz para pacientes que buscam emagrecimento sustentável sem recorrer a medicamentos injetáveis.”</blockquote>
-            <p><strong>Dra. Caliandra Marques</strong><span>Identificação e declaração fornecidas pelo anunciante; confirme credenciais, autorização e origem antes de publicar.</span></p>
+            <span className="eyebrow">INFORMAÇÃO E CUIDADO</span>
+            <h2>Suplementos não substituem orientação profissional.</h2>
+            <blockquote>Antes de iniciar o uso, confira a composição e as advertências no rótulo. Se tiver uma condição de saúde, usar medicamentos ou estiver em dúvida, converse com um profissional de saúde.</blockquote>
+            <p><strong>Escolha com informação</strong><span>O uso deve seguir as orientações da rotulagem vigente.</span></p>
           </div>
           <div className="expert-stars" aria-hidden="true">★★★★★</div>
         </section>
 
         <section className="quality-section section-pad">
-          <div className="quality-copy"><span className="eyebrow">CUIDADOS EM CADA ETAPA</span><h2>Informações de composição e fabricação.</h2><p>Consulte o rótulo e a documentação vigente do fabricante para verificar composição, regularização e condições de fabricação do Monjarim.</p><a className="text-link" href="#duvidas">Leia as dúvidas frequentes <ArrowRight size={16} /></a></div>
+          <div className="quality-copy"><span className="eyebrow">CUIDADOS EM TODAS AS ETAPAS</span><h2>Informações de composição e fabricação.</h2><p>Consulte o rótulo e a documentação vigente do fabricante para verificar composição, regularização e condições de fabricação do Monjarim.</p><a className="text-link" href="#duvidas">Leia as dúvidas frequentes <ArrowRight size={16} /></a></div>
           <div className="quality-stamps">
             <div><ShieldCheck /><span>Consulte a regularização</span></div>
             <div><Check /><span>Informações do fabricante</span></div>
@@ -363,7 +363,7 @@ export default function Home() {
         </section>
 
         <section className="faq-section section-pad" id="duvidas">
-          <div className="faq-intro"><span className="eyebrow">AINDA ESTÁ EM DÚVIDA?</span><h2>Confira as perguntas mais frequentes.</h2><p>Se sua dúvida não estiver aqui, consulte a página oficial e os detalhes exibidos pela Braip antes de concluir a compra.</p><a href={genericHref} className="text-link" rel="sponsored nofollow noopener" target="_blank">Ver página de vendas oficial <ArrowRight size={16} /></a></div>
+          <div className="faq-intro"><span className="eyebrow">AINDA ESTÁ EM DÚVIDA?</span><h2>Confira as perguntas mais frequentes.</h2><p>Se sua dúvida não estiver aqui, consulte as informações do fabricante e as condições exibidas no checkout da Braip.</p><a href={genericHref} className="text-link" rel="sponsored nofollow noopener" target="_blank">Ver oferta na Braip <ArrowRight size={16} /></a></div>
           <div className="faq-list">
             {FAQs.map((faq, index) => (
               <article className={activeFaq === index ? "faq-item faq-active" : "faq-item"} key={faq.question}>
