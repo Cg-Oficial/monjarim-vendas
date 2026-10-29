@@ -428,28 +428,3 @@ h1,h2,h3 { font-family:'Manrope',Arial,sans-serif; }
   .offer-product-image { width:min(100%,142px); height:118px; }
   .offer-card-featured .offer-product-image { width:min(100%,150px); height:124px; }
 }
-
-.hero-actions { display:flex; justify-content:center; flex-wrap:wrap; align-items:center; gap:11px; }
-.hero-secondary-button { min-height:54px; border-color:rgba(139,62,99,.24); color:var(--purple); background:rgba(255,255,255,.8); }
-.hero-secondary-button:hover { background:#fff; border-color:rgba(139,62,99,.48); }
-.quality-stamps { align-items:stretch; }
-.quality-tile { min-height:156px; position:relative; display:flex; flex-direction:column; justify-content:flex-end; align-items:stretch; gap:0; padding:0; overflow:hidden; border:1px solid rgba(90,37,84,.1); border-radius:16px; background:#fff; color:var(--purple); text-decoration:none; box-shadow:0 10px 24px rgba(68,41,71,.06); transition:transform .2s ease, box-shadow .2s ease; }
-.quality-tile:hover { transform:translateY(-3px); box-shadow:0 15px 28px rgba(68,41,71,.12); }
-.quality-tile-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.quality-tile:after { content:""; position:absolute; inset:26% 0 0; background:linear-gradient(transparent,rgba(39,25,43,.82)); pointer-events:none; }
-.quality-tile-label { position:relative; z-index:1; display:flex; align-items:center; gap:8px; padding:12px; color:#fff; font-size:11px; font-weight:700; line-height:1.35; }
-.quality-tile-label svg { width:20px; height:20px; flex:none; color:#f7c9df; }
-.quality-tile-icon { position:absolute; inset:0; display:grid; place-items:center; color:var(--magenta); background:radial-gradient(circle at 50% 34%,#fff 0,#fff 34%,#f5e5ef 35%,#fbf4f8 100%); }
-.quality-tile-icon svg { width:54px; height:54px; stroke-width:1.6; }
-@media (max-width:760px) {
-  .site-header { height:auto; min-height:68px; flex-wrap:wrap; padding-top:10px; padding-bottom:9px; }
-  .mobile-menu-toggle, .mobile-faq-button { display:none!important; }
-  .main-nav { display:flex; position:static; flex:0 0 100%; width:100%; flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px; padding:10px 0 2px; overflow:visible; border:0; background:transparent; box-shadow:none; }
-  .main-nav > a:not(.btn) { flex:0 0 auto; padding:9px 10px; border:1px solid #f1e4ec; border-radius:999px; background:#fff; font-size:11px; }
-  .main-nav .nav-faq-button { display:inline-flex; }
-  .main-nav .nav-cta { flex:0 0 auto; min-height:38px; margin:0; padding:0 14px; font-size:10px; }
-  .hero-actions { width:min(100%,360px); flex-direction:column; }
-  .hero-actions .btn { width:100%; }
-  .quality-tile { min-height:132px; }
-  .quality-tile-label { padding:9px; font-size:10px; }
-}

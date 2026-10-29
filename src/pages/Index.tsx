@@ -6,9 +6,11 @@ import {
   ChevronDown,
   Flame,
   Leaf,
+  Menu,
   ShieldCheck,
   ShoppingBag,
   Truck,
+  X,
   Zap,
 } from "lucide-react";
 import CookieConsent from "@/components/CookieConsent";
@@ -165,6 +167,7 @@ function OfferCard({ offer, compact = false }: { offer: AffiliateOffer; compact?
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const primaryOffers = [offers[3], offers[2], offers[1], offers[0]];
   const specialOffers = offers.slice(4);
   const genericOffer = offers[0];
@@ -180,12 +183,22 @@ export default function Home() {
           <span className="brand-symbol"><Leaf size={18} /></span>
           <span>monjarim<small>nutra</small></span>
         </a>
-        <nav className="main-nav" aria-label="Navegação principal">
-          <a href="#produto">O produto</a>
-          <a href="#formula">A fórmula</a>
-          <a href="#depoimentos">Depoimentos</a>
-          <a className="nav-faq-button" href="#duvidas" aria-label="Ir para dúvidas frequentes">Dúvidas</a>
-          <a className="btn btn-primary nav-cta" href="#compra">Ver ofertas</a>
+        <a className="mobile-faq-button" href="#duvidas" aria-label="Ir para dúvidas frequentes">Dúvidas</a>
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen((open) => !open)}
+        >
+          {mobileMenuOpen ? <X /> : <Menu />}
+        </button>
+        <nav className={mobileMenuOpen ? "main-nav nav-open" : "main-nav"} aria-label="Navegação principal">
+          <a href="#produto" onClick={() => setMobileMenuOpen(false)}>O produto</a>
+          <a href="#formula" onClick={() => setMobileMenuOpen(false)}>A fórmula</a>
+          <a href="#depoimentos" onClick={() => setMobileMenuOpen(false)}>Depoimentos</a>
+          <a className="nav-faq-button" href="#duvidas" aria-label="Ir para dúvidas frequentes" onClick={() => setMobileMenuOpen(false)}>Dúvidas</a>
+          <a className="btn btn-primary nav-cta" href="#compra" onClick={() => setMobileMenuOpen(false)}>Ver ofertas</a>
         </nav>
       </header>
 
@@ -193,19 +206,16 @@ export default function Home() {
         <section className="hero" id="inicio">
           <div className="hero-copy">
             <span className="eyebrow"><span className="eyebrow-dot" /> CONHEÇA MONJARIM</span>
-            <h1>Você sofre com <strong>obesidade</strong> e sente que <em>nenhuma dieta funciona?</em></h1>
-            <p className="hero-lead"><b>Conheça o Monjarim.</b> Um suplemento alimentar com ingredientes apresentados pelo fabricante.</p>
-            <p className="hero-subline">Confira a composição, as orientações e as condições da oferta antes de escolher.</p>
-            <div className="hero-actions">
-              <a className="btn btn-primary hero-button" href="#compra">Ver ofertas do Monjarim <ArrowRight size={18} /></a>
-              <a className="btn btn-outline hero-secondary-button" href="#formula">Conhecer a fórmula</a>
-            </div>
-            <p className="hero-caption">A compra é finalizada no checkout da Braip.</p>
+            <h1>Conheça o <strong>Monjarim</strong> e descubra uma nova forma de cuidar de você.</h1>
+            <p className="hero-lead"><b>Um suplemento alimentar com ingredientes apresentados pelo fabricante.</b> Conheça a fórmula e confira as informações do rótulo.</p>
+            <p className="hero-subline">Informação clara para uma escolha consciente.</p>
+            <a className="btn btn-primary hero-button" href="#compra">Ver opções do Monjarim <ArrowRight size={18} /></a>
+            <p className="hero-caption">Finalize sua compra diretamente no checkout da Braip.</p>
           </div>
           <div className="hero-art" aria-label="Embalagens do suplemento Monjarim">
             <div className="hero-glow" />
-            <img src={productPhoto} alt="Embalagens do suplemento alimentar Monjarim" />
-            <div className="hero-float float-top"><Leaf size={17} /> Ingredientes no rótulo</div>
+            <img src={productPhoto} alt="Embalagens oficiais do suplemento alimentar Monjarim" />
+            <div className="hero-float float-top"><Leaf size={17} /> Fórmula com ativos naturais</div>
             <div className="hero-float float-bottom"><ShieldCheck size={17} /> Checkout Braip</div>
           </div>
           <div className="hero-trust">
@@ -323,24 +333,12 @@ export default function Home() {
         <section className="quality-section section-pad">
           <div className="quality-copy"><span className="eyebrow">CUIDADOS EM TODAS AS ETAPAS</span><h2>Informações de composição e fabricação.</h2><p>Consulte o rótulo e a documentação vigente do fabricante para verificar composição, regularização e condições de fabricação do Monjarim.</p><a className="text-link" href="#duvidas">Leia as dúvidas frequentes <ArrowRight size={16} /></a></div>
           <div className="quality-stamps">
-            <a className="quality-tile" href="https://www.gov.br/anvisa/pt-br" target="_blank" rel="noopener noreferrer">
-              <span className="quality-tile-icon"><ShieldCheck /></span><span className="quality-tile-label">Consulte informações na ANVISA</span>
-            </a>
-            <div className="quality-tile">
-              <img className="quality-tile-image" src="/monjarim/quality-lab-illustration.svg" alt="Ilustração de ambiente de laboratório" loading="lazy" />
-              <span className="quality-tile-label"><Check /> Verifique a documentação técnica
-              </span>
-            </div>
-            <div className="quality-tile">
-              <img className="quality-tile-image" src="/monjarim/ingredient-cafe-verde.svg" alt="Ilustração botânica de folhas e grãos" loading="lazy" />
-              <span className="quality-tile-label"><Leaf /> Ingredientes: confira o rótulo</span>
-            </div>
-            <div className="quality-tile">
-              <img className="quality-tile-image" src="/monjarim/quality-factory-illustration.svg" alt="Ilustração genérica de uma instalação industrial" loading="lazy" />
-              <span className="quality-tile-label"><ShoppingBag /> Consulte os dados do fabricante</span>
-            </div>
+            <div><ShieldCheck /><span>Consulte a regularização</span></div>
+            <div><Check /><span>Informações do fabricante</span></div>
+            <div><Leaf /><span>Composição no rótulo</span></div>
+            <div><ShoppingBag /><span>Dados de fabricação</span></div>
           </div>
-          <p className="quality-note">As ilustrações são representativas e não mostram instalações, ensaios ou selos do fabricante. Consulte os documentos vigentes e as informações regulatórias aplicáveis.</p>
+          <p className="quality-note">Consulte os documentos vigentes do fabricante e as informações regulatórias aplicáveis.</p>
         </section>
 
         <section className="guarantee-section section-pad">
