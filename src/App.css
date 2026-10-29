@@ -434,3 +434,12 @@ h1,h2,h3 { font-family:'Manrope',Arial,sans-serif; }
   html { scroll-padding-top:120px; }
   .main-nav { scroll-padding-inline:12px; }
 }
+
+.testimonial-avatar { flex:none; background-image:url("/monjarim/depoimentos-referencia.png"); background-repeat:no-repeat; background-size:930px 693px; }
+.avatar-fernando { background-position:4.8% 16.4%; }
+.avatar-maria { background-position:4.8% 39.3%; }
+.avatar-juliana { background-position:4.8% 62.6%; }
+.avatar-fernanda { background-position:4.8% 86.5%; }
+.offer-special-button { animation:offerPulse 2.3s ease-in-out infinite; }
+@keyframes offerPulse { 0%,100% { box-shadow:0 10px 24px rgba(68,41,71,.18); } 50% { box-shadow:0 12px 30px rgba(189,0,100,.34); } }
+@media (prefers-reduced-motion: reduce) { .offer-special-button { animation:none; } }

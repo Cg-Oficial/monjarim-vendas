@@ -7,6 +7,8 @@ test("navegacao e oferta especial levam ao checkout Braip", async ({ page, conte
   await navigation.getByRole("link", { name: "O produto" }).click();
   await expect(page).toHaveURL(/#produto$/);
   await expect(page.getByRole("heading", { name: "Comprar o MONJARIM é fácil." })).toBeVisible();
+  await expect(page.locator(".testimonial-avatar")).toHaveCount(4);
+  await expect(page.locator(".testimonial-avatar").first()).toHaveCSS("background-image", /depoimentos-referencia\.png/);
   await page.getByRole("link", { name: "Oferta especial" }).click();
   await expect(page).toHaveURL(/#melhor-opcao$/);
 
