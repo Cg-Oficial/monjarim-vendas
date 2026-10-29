@@ -241,23 +241,23 @@ export default function Home() {
 
         <section className="story-section section-pad" id="produto">
           <div className="section-heading centered">
-            <span className="eyebrow">INFORMAÇÃO PARA UMA ESCOLHA CONSCIENTE</span>
-            <h2>Conheça o Monjarim e as informações do produto.</h2>
-            <p>Veja a composição, as orientações do fabricante e as condições da oferta antes de decidir.</p>
+            <span className="eyebrow">UM NOVO COMEÇO</span>
+            <h2>Não permita que a obesidade tire a sua alegria de viver!</h2>
+            <p>Liberte-se das amarras do passado. O caminho para o seu novo corpo é guiado por inovação científica, autonomia e performance real.</p>
           </div>
           <div className="story-grid">
             <article className="story-card story-card-photo">
               <img src={storyPhotoOne} alt="Imagem da campanha Monjarim retratando uma mulher diante do espelho" loading="lazy" />
-              <div><span>01 / CONHEÇA O PRODUTO</span><h3>Quer saber mais sobre o Monjarim?</h3><p>Veja a apresentação do produto e confira as informações fornecidas pelo fabricante.</p></div>
+              <div><span>01 / RECOMEÇO</span><h3>Já se sentiu preso num corpo que não te representa?</h3><p>A roupa aperta, o espelho machuca, a vontade de sumir aparece.</p></div>
             </article>
             <div className="story-side">
               <article className="story-card story-card-photo story-card-weighing">
                 <img src={storyPhotoWeighing} alt="Imagem ilustrativa de uma mulher diante de uma balança em ambiente doméstico." loading="lazy" />
-                <div><span>02 / INFORMAÇÃO</span><h3>Leia o rótulo antes de decidir.</h3><p>Confira a composição, as orientações de uso e as advertências do fabricante.</p></div>
+                <div><span>02 / SEM CULPA</span><h3>Você se pesa… e desiste de novo.</h3><p>Não é falta de força de vontade. É falta de uma solução que funcione de verdade.</p></div>
               </article>
               <article className="story-card story-card-photo story-card-small">
                 <img src={storyPhotoTwo} alt="Imagem da campanha Monjarim sobre uma escolha alimentar consciente" loading="lazy" />
-                <div><span>03 / COMPARE AS OPÇÕES</span><h3>Escolha com autonomia.</h3><p>Compare os kits e confirme preço, frete e condições diretamente no checkout.</p></div>
+                <div><span>03 / NOVOS HÁBITOS</span><h3>Existe outro caminho.</h3><p>Parar de comer o que gosta não é disciplina, é tortura. Emagrecimento inteligente, simples e real.</p></div>
               </article>
             </div>
           </div>
@@ -294,7 +294,7 @@ export default function Home() {
         <section className="formula-section section-pad" id="formula">
           <div className="section-heading centered">
             <span className="eyebrow">ATIVOS DA FÓRMULA</span>
-            <h2>Conheça os ingredientes de Monjarim.</h2>
+            <h2>Conheça a fórmula exclusiva de Monjarim.</h2>
             <p>Veja os ingredientes destacados pelo fabricante e confira a composição completa no rótulo.</p>
           </div>
           <div className="ingredient-grid">
@@ -325,7 +325,7 @@ export default function Home() {
             <article className="testimonial-card"><div className="testimonial-avatar" aria-hidden="true">JF</div><div className="quote-mark">“</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“O MONJARIM transformou a minha vida! Eu sofria com inchaço abdominal, sensação de peso e dificuldade para controlar o apetite. Em menos de 30 dias, minhas roupas já estavam mais largas e eu me sentia muito mais leve.”</blockquote><strong>Juliana Ferreira</strong><small>Rio de Janeiro, RJ · 33 anos</small></article>
             <article className="testimonial-card"><div className="testimonial-avatar" aria-hidden="true">FP</div><div className="quote-mark">“</div><div className="stars" aria-label="5 de 5 estrelas">★★★★★</div><blockquote>“Após anos lutando contra a obesidade e a frustração de não conseguir emagrecer, encontrei no MONJARIM a solução que eu precisava. Os resultados aparecem rápido e o melhor: sem efeito rebote!”</blockquote><strong>Fernanda Pimenta</strong><small>Curitiba, PR · 41 anos</small></article>
           </div>
-          <p className="testimonial-disclaimer">Relatos fornecidos pelo anunciante, sem verificação independente. Não garantem resultados. Confirme sua autenticidade, a autorização de uso e a documentação antes de publicar.</p>
+          <p className="testimonial-disclaimer">Relatos fornecidos pelo anunciante. Confirme a autenticidade, a autorização de uso e a documentação dos resultados antes de republicá-los como experiências verificadas.</p>
         </section>
 
         <section className="expert-section section-pad">
@@ -351,8 +351,8 @@ export default function Home() {
         </section>
 
         <section className="guarantee-section section-pad">
-          <div className="guarantee-seal"><ShieldCheck size={42} /><span>i</span><small>INFO</small></div>
-          <div><span className="eyebrow">CONDIÇÕES DE COMPRA</span><h2>Confira os detalhes antes de comprar.</h2><p>Consulte no checkout da Braip os prazos, as regras de garantia e as condições de reembolso aplicáveis ao plano escolhido.</p><a className="btn btn-primary" href="#compra">Ver ofertas <ArrowRight size={17} /></a></div>
+          <div className="guarantee-seal"><ShieldCheck size={42} /><span>90</span><small>DIAS</small></div>
+          <div><span className="eyebrow">GARANTIA LEGAL</span><h2>Experimente sem risco.</h2><p>Garantia de 90 dias, com reembolso conforme os protocolos, prazos e critérios de elegibilidade vigentes da plataforma e do fabricante. Confira as condições no checkout antes de comprar.</p><a className="btn btn-primary" href="#compra">Quero conhecer as ofertas <ArrowRight size={17} /></a></div>
         </section>
 
         <section className="offers-section section-pad" id="compra">
