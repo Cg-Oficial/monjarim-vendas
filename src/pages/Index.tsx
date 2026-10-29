@@ -180,7 +180,7 @@ export default function Home() {
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     let textNode = walker.nextNode();
     while (textNode) {
-      textNode.nodeValue = textNode.nodeValue?.replaceAll("MONJARIM", "Monjarim") ?? "";
+      textNode.nodeValue = textNode.nodeValue?.split("MONJARIM").join("Monjarim") ?? "";
       textNode = walker.nextNode();
     }
     const avatarImage = `url("${import.meta.env.BASE_URL}monjarim/depoimentos-referencia.png")`;
