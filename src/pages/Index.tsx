@@ -6,11 +6,9 @@ import {
   ChevronDown,
   Flame,
   Leaf,
-  Menu,
   ShieldCheck,
   ShoppingBag,
   Truck,
-  X,
   Zap,
 } from "lucide-react";
 import CookieConsent from "@/components/CookieConsent";
@@ -167,7 +165,6 @@ function OfferCard({ offer, compact = false }: { offer: AffiliateOffer; compact?
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const primaryOffers = [offers[3], offers[2], offers[1], offers[0]];
   const specialOffers = offers.slice(4);
   const genericOffer = offers[0];
@@ -183,22 +180,12 @@ export default function Home() {
           <span className="brand-symbol"><Leaf size={18} /></span>
           <span>monjarim<small>nutra</small></span>
         </a>
-        <a className="mobile-faq-button" href="#duvidas" aria-label="Ir para dúvidas frequentes">Dúvidas</a>
-        <button
-          className="mobile-menu-toggle"
-          type="button"
-          aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={mobileMenuOpen}
-          onClick={() => setMobileMenuOpen((open) => !open)}
-        >
-          {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
-        <nav className={mobileMenuOpen ? "main-nav nav-open" : "main-nav"} aria-label="Navegação principal">
-          <a href="#produto" onClick={() => setMobileMenuOpen(false)}>O produto</a>
-          <a href="#formula" onClick={() => setMobileMenuOpen(false)}>A fórmula</a>
-          <a href="#depoimentos" onClick={() => setMobileMenuOpen(false)}>Depoimentos</a>
-          <a className="nav-faq-button" href="#duvidas" aria-label="Ir para dúvidas frequentes" onClick={() => setMobileMenuOpen(false)}>Dúvidas</a>
-          <a className="btn btn-primary nav-cta" href="#compra" onClick={() => setMobileMenuOpen(false)}>Ver ofertas</a>
+        <nav className="main-nav" aria-label="Navegação principal">
+          <a href="#produto">O produto</a>
+          <a href="#formula">A fórmula</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a className="nav-faq-button" href="#duvidas" aria-label="Ir para dúvidas frequentes">Dúvidas</a>
+          <a className="btn btn-primary nav-cta" href="#compra">Ver ofertas</a>
         </nav>
       </header>
 
@@ -206,10 +193,10 @@ export default function Home() {
         <section className="hero" id="inicio">
           <div className="hero-copy">
             <span className="eyebrow"><span className="eyebrow-dot" /> CONHEÇA MONJARIM</span>
-            <h1>Conheça o <strong>Monjarim</strong> e descubra uma nova forma de cuidar de você.</h1>
+            <h1>Conheça o <strong>Monjarim</strong> e descubra uma nova forma de <em>cuidar de você.</em></h1>
             <p className="hero-lead"><b>Um suplemento alimentar com ingredientes apresentados pelo fabricante.</b> Conheça a fórmula e confira as informações do rótulo.</p>
             <p className="hero-subline">Informação clara para uma escolha consciente.</p>
-            <a className="btn btn-primary hero-button" href="#compra">Ver opções do Monjarim <ArrowRight size={18} /></a>
+            <a className="btn btn-primary hero-button" href="#compra">Quero conhecer o Monjarim <ArrowRight size={18} /></a>
             <p className="hero-caption">Finalize sua compra diretamente no checkout da Braip.</p>
           </div>
           <div className="hero-art" aria-label="Embalagens do suplemento Monjarim">

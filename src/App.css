@@ -271,15 +271,12 @@ h1,h2,h3 { font-family:'Manrope',Arial,sans-serif; }
 }
 @media (max-width:760px) {
   .top-strip { height:30px; font-size:8px; gap:5px; white-space:nowrap; }
-  .site-header { height:68px; }
+  .site-header { height:auto; min-height:82px; flex-wrap:wrap; justify-content:space-between; gap:12px; padding-top:12px; padding-bottom:12px; }
   .brand-mark { font-size:21px; }
-  .mobile-faq-button { min-width:70px; min-height:42px; display:inline-flex; flex:none; align-items:center; justify-content:center; padding:0 14px; border:1px solid rgba(189,0,100,.24); border-radius:999px; background:#fff; color:var(--purple); font-size:11px; font-weight:800; box-shadow:0 5px 15px rgba(105,0,59,.07); }
-  .mobile-menu-toggle { display:grid; place-items:center; width:42px; height:42px; cursor:pointer; }
-  .main-nav { display:none; position:absolute; top:68px; left:0; right:0; align-items:stretch; gap:0; padding:12px 24px 22px; border-bottom:1px solid var(--line); background:#fffafd; box-shadow:0 14px 22px rgba(39,12,45,.08); }
-  .main-nav.nav-open { display:flex; flex-direction:column; }
-  .main-nav > a:not(.btn) { padding:14px 0; border-bottom:1px solid #f1e7ee; }
-  .main-nav .nav-faq-button { display:none; }
-  .main-nav .nav-cta { margin-top:13px; }
+  .main-nav { width:100%; display:flex; justify-content:flex-start; gap:8px; overflow-x:auto; padding:9px 0 2px; border-top:1px solid #f1e7ee; scrollbar-width:thin; }
+  .main-nav > a:not(.btn) { flex:none; padding:9px 11px; border:1px solid #eee1e9; border-radius:999px; background:#fff; font-size:10px; white-space:nowrap; }
+  .main-nav .nav-faq-button { display:inline-flex; }
+  .main-nav .nav-cta { flex:none; min-height:38px; margin:0; padding:0 15px; white-space:nowrap; }
   .hero { min-height:auto; grid-template-columns:1fr; gap:0; padding-top:42px; padding-bottom:66px; }
   .hero h1 { max-width:590px; font-size:clamp(38px,11vw,54px); }
   .hero-lead { font-size:15px; }
@@ -427,4 +424,13 @@ h1,h2,h3 { font-family:'Manrope',Arial,sans-serif; }
   .offer-selection-note { align-items:flex-start; flex-direction:column; gap:5px; text-align:left; }
   .offer-product-image { width:min(100%,142px); height:118px; }
   .offer-card-featured .offer-product-image { width:min(100%,150px); height:124px; }
+}
+
+.top-strip { background:#41106f; }
+.brand-symbol { background:#bd0064; }
+.btn-primary { background:#bd0064; }
+.btn-primary:hover { background:#97004f; }
+@media (max-width:760px) {
+  html { scroll-padding-top:120px; }
+  .main-nav { scroll-padding-inline:12px; }
 }
