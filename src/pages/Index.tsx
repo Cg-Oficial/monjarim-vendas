@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowDown,
   ArrowRight,
@@ -12,6 +12,7 @@ import {
   Zap,
 } from "lucide-react";
 import CookieConsent from "@/components/CookieConsent";
+import KitWheel from "@/components/KitWheel";
 import {
   buildAffiliateUrl,
   buildSalesPageUrl,
@@ -21,11 +22,13 @@ import {
 } from "@/lib/affiliate-links";
 import { trackAffiliateCheckoutClick } from "@/lib/marketing-tags";
 import "../App.css";
+import "../monjarim-interactions.css";
 
-const productPhoto = "/monjarim/asset-1.webp";
-const storyPhotoOne = "/monjarim/asset-2.webp";
-const storyPhotoTwo = "/monjarim/asset-3.webp";
-const storyPhotoWeighing = "/monjarim/asset-5.webp";
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+const productPhoto = publicAsset("monjarim/asset-1.webp");
+const storyPhotoOne = publicAsset("monjarim/asset-2.webp");
+const storyPhotoTwo = publicAsset("monjarim/asset-3.webp");
+const storyPhotoWeighing = publicAsset("monjarim/asset-5.webp");
 
 const ingredients = [
   {
@@ -33,28 +36,28 @@ const ingredients = [
     title: "CAFÉ VERDE",
     text: "Ingrediente apresentado pelo fabricante. Consulte o rótulo vigente para verificar a composição, a quantidade por porção e as informações atualizadas.",
     tone: "green",
-    image: "/monjarim/ingredient-cafe-verde.svg",
+    image: publicAsset("monjarim/ingredient-cafe-verde.svg"),
   },
   {
     initials: "C3®",
     title: "C3 REDUCT®",
     text: "Ingrediente identificado pelo fabricante como parte da fórmula. Consulte o rótulo vigente para verificar a composição, a quantidade por porção e as informações atualizadas.",
     tone: "purple",
-    image: "/monjarim/ingredient-curcuma.svg",
+    image: publicAsset("monjarim/ingredient-curcuma.svg"),
   },
   {
     initials: "LM",
     title: "LARANJA MORO",
     text: "Ingrediente apresentado na fórmula do produto. Consulte o rótulo vigente para conferir a composição e as informações fornecidas pelo fabricante.",
     tone: "orange",
-    image: "/monjarim/ingredient-laranja.svg",
+    image: publicAsset("monjarim/ingredient-laranja.svg"),
   },
   {
     initials: "CR",
     title: "CROMO",
     text: "Mineral listado entre os ingredientes apresentados pelo fabricante. Confira no rótulo a forma, a quantidade por porção e as orientações de consumo.",
     tone: "pink",
-    image: "/monjarim/ingredient-cromo.svg",
+    image: publicAsset("monjarim/ingredient-cromo.svg"),
   },
 ];
 
@@ -166,9 +169,29 @@ function OfferCard({ offer, compact = false }: { offer: AffiliateOffer; compact?
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const primaryOffers = [offers[3], offers[2], offers[1], offers[0]];
-  const specialOffers = offers.slice(4);
+  const wheelOffers = [offers[0], offers[1], offers[2], offers[3]];
+  const specialOffers = offers.slice(4, 7);
   const genericOffer = offers[0];
   const genericHref = buildSalesPageUrl();
+
+  useEffect(() => {
+    const root = document.querySelector(".site-shell");
+    if (!root) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let textNode = walker.nextNode();
+    while (textNode) {
+      textNode.nodeValue = textNode.nodeValue?.replaceAll("MONJARIM", "Monjarim") ?? "";
+      textNode = walker.nextNode();
+    }
+    const avatarImage = `url("${import.meta.env.BASE_URL}monjarim/depoimentos-referencia.png")`;
+    root.querySelectorAll<HTMLElement>(".testimonial-avatar").forEach((avatar) => {
+      avatar.style.backgroundImage = avatarImage;
+    });
+    const doctorPortrait = root.querySelector<HTMLElement>(".expert-portrait");
+    if (doctorPortrait) {
+      doctorPortrait.style.backgroundImage = `url("${import.meta.env.BASE_URL}monjarim/doutora-referencia.png")`;
+    }
+  }, []);
 
   const openCookieSettings = () => window.dispatchEvent(new Event("monjarim-open-cookie-settings"));
 
@@ -181,8 +204,8 @@ export default function Home() {
           <span>monjarim<small>nutra</small></span>
         </a>
         <nav className="main-nav" aria-label="Navegação principal">
-          <a href="#produto">O produto</a>
-          <a href="#formula">A fórmula</a>
+          <a href="#produto">O Produto</a>
+          <a href="#formula">A Fórmula</a>
           <a href="#depoimentos">Depoimentos</a>
           <a className="nav-faq-button" href="#duvidas" aria-label="Ir para dúvidas frequentes">Dúvidas</a>
           <a className="btn btn-primary nav-cta" href="#compra">Ver ofertas</a>
@@ -203,10 +226,9 @@ export default function Home() {
             <div className="hero-glow" />
             <img src={productPhoto} alt="Embalagens oficiais do suplemento alimentar Monjarim" />
             <div className="hero-float float-top"><Leaf size={17} /> Fórmula com ativos naturais</div>
-            <div className="hero-float float-bottom"><ShieldCheck size={17} /> Checkout Braip</div>
           </div>
           <div className="hero-trust">
-            <span><Truck size={18} /> Frete conforme o plano</span>
+            <span><Truck size={18} /> Frete grátis em kits selecionados</span>
             <span><ShieldCheck size={18} /> Checkout Braip</span>
             <span><Check size={18} /> Condições da oferta</span>
           </div>
@@ -307,12 +329,12 @@ export default function Home() {
         </section>
 
         <section className="expert-section section-pad">
-          <div className="expert-mark"><ShieldCheck size={30} /></div>
+          <div className="expert-mark expert-portrait" role="img" aria-label="Retrato fornecido de Dra. Caliandra Marques" />
           <div className="expert-copy">
-            <span className="eyebrow">ORIENTAÇÃO DE SAÚDE</span>
-            <h2>Antes de usar, converse com um profissional.</h2>
-            <blockquote>Confira a composição e as advertências no rótulo. Se tiver uma condição de saúde, usar medicamentos ou estiver em dúvida, procure orientação profissional antes de iniciar o consumo.</blockquote>
-            <p><strong>Informação responsável</strong><span>O uso deve seguir as orientações da rotulagem vigente.</span></p>
+            <span className="eyebrow">RELATO ENVIADO PELO ANUNCIANTE</span>
+            <h2>Conheça o relato atribuído à Dra. Caliandra Marques.</h2>
+            <blockquote>“Tive o prazer de conhecer o Monjarim em um evento internacional de estudos do caso.”</blockquote>
+            <p><strong>Dra. Caliandra Marques</strong><span>Trecho e identificação fornecidos pelo anunciante; confirme autoria, credenciais e autorização de uso antes de publicar.</span></p>
           </div>
           <a className="btn btn-primary expert-cta" href="#compra">Ver ofertas <ArrowRight size={16} /></a>
         </section>
@@ -336,7 +358,7 @@ export default function Home() {
         <section className="offers-section section-pad" id="compra">
           <div className="section-heading centered">
             <a className="btn btn-primary offer-special-button" href="#melhor-opcao">Oferta especial <ArrowRight size={16} /></a>
-            <h2>Comprar o MONJARIM é fácil.</h2>
+            <h2>Comprar o Monjarim é fácil.</h2>
             <p>Escolha seu kit e finalize o pedido no checkout da Braip. Compare as opções e confira os preços, descontos, frete e disponibilidade antes de concluir.</p>
             <div className="offer-selection-note"><strong>Compare e escolha a melhor opção para você.</strong><span>As condições e o estoque atual são confirmados no checkout.</span></div>
           </div>
@@ -347,6 +369,7 @@ export default function Home() {
           <div className="special-offers-grid">
             {specialOffers.map((offer) => <OfferCard offer={offer} compact key={offer.id} />)}
           </div>
+          <KitWheel options={wheelOffers} />
           <div className="checkout-assurance"><ShieldCheck /><span>Compra realizada no checkout seguro da Braip</span><span>•</span><span>Parcelamento e frete conforme o checkout</span></div>
         </section>
 
@@ -373,7 +396,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand"><a className="brand-mark" href="#inicio"><span className="brand-symbol"><Leaf size={18} /></span><span>monjarim<small>nutra</small></span></a><p>Suplemento alimentar em cápsulas. Conheça a composição e confira os detalhes de compra na Braip.</p></div>
-          <div className="footer-column"><strong>Explore</strong><a href="#produto">O produto</a><a href="#formula">A fórmula</a><a href="#compra">Planos e ofertas</a><a href="#duvidas">Dúvidas frequentes</a></div>
+          <div className="footer-column"><strong>Explore</strong><a href="#produto">O Produto</a><a href="#formula">A Fórmula</a><a href="#compra">Planos e ofertas</a><a href="#duvidas">Dúvidas frequentes</a></div>
           <div className="footer-column"><strong>Informações</strong><a href="https://pulsepro.com.br/politica-de-privacidade/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a><a href="https://pulsepro.com.br/termos-e-condicoes/" target="_blank" rel="noopener noreferrer">Termos e Condições</a><a href="https://pulsepro.com.br/aviso-legal" target="_blank" rel="noopener noreferrer">Aviso Legal</a><a href="https://pulsepro.com.br/politica-de-troca/" target="_blank" rel="noopener noreferrer">Política de Troca e Devolução</a><button type="button" onClick={openCookieSettings}>Preferências de cookies</button></div>
           <div className="footer-column"><strong>Atendimento</strong><a href="mailto:sacmonjarim@gmail.com">sacmonjarim@gmail.com</a><a href="https://mga.phdesenvolvimento.online/rastreio" target="_blank" rel="noopener noreferrer">Rastrear pedido</a><span>Entrega conforme as condições no checkout.</span></div>
         </div>

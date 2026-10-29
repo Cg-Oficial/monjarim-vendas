@@ -21,10 +21,10 @@ export interface AffiliateOffer {
 const affiliateId = "afi3vmxpo8";
 const checkoutId = "chew4mj1";
 const productImageByBottleCount: Record<OfferBottleCount, string> = {
-  1: "/monjarim/kit-1-frasco-alta-resolucao.png",
-  3: "/monjarim/kit-3-frascos-alta-resolucao.png",
-  5: "/monjarim/bundle-5.webp",
-  10: "/monjarim/kit-10-frascos-alta-resolucao.png",
+  1: `${import.meta.env.BASE_URL}monjarim/kit-1-frasco-alta-resolucao.png`,
+  3: `${import.meta.env.BASE_URL}monjarim/kit-3-frascos-alta-resolucao.png`,
+  5: `${import.meta.env.BASE_URL}monjarim/bundle-5.webp`,
+  10: `${import.meta.env.BASE_URL}monjarim/kit-10-frascos-alta-resolucao.png`,
 };
 
 function braipUrl(host: "ev.braip.com" | "pay.braip.co", planId: string) {
@@ -37,7 +37,7 @@ export const salesPageUrl =
 const offerDefinitions: Omit<AffiliateOffer, "productImage">[] = [
   {
     id: "single",
-    name: "MONJARIM 1 Frasco",
+    name: "Monjarim 1 Frasco",
     bottles: 1,
     badge: "Tratamento 1 mês",
     originalPrice: "R$ 297,00",
@@ -50,7 +50,7 @@ const offerDefinitions: Omit<AffiliateOffer, "productImage">[] = [
   },
   {
     id: "three",
-    name: "MONJARIM 3 Frascos",
+    name: "Monjarim 3 Frascos",
     bottles: 3,
     badge: "Tratamento 3 meses",
     originalPrice: "R$ 591,00",
@@ -63,7 +63,7 @@ const offerDefinitions: Omit<AffiliateOffer, "productImage">[] = [
   },
   {
     id: "five",
-    name: "MONJARIM 5 Frascos",
+    name: "Monjarim 5 Frascos",
     bottles: 5,
     badge: "Tratamento 5 meses",
     originalPrice: "R$ 985,00",
@@ -77,7 +77,7 @@ const offerDefinitions: Omit<AffiliateOffer, "productImage">[] = [
   },
   {
     id: "ten",
-    name: "MONJARIM 10 Frascos",
+    name: "Monjarim 10 Frascos",
     bottles: 10,
     badge: "Melhor opção · 10 meses",
     originalPrice: "R$ 1.970,00",
@@ -90,7 +90,7 @@ const offerDefinitions: Omit<AffiliateOffer, "productImage">[] = [
   },
   {
     id: "single-special",
-    name: "MONJARIM 1 Frasco · Oferta",
+    name: "Monjarim 1 Frasco · Oferta",
     bottles: 1,
     badge: "Oferta especial",
     standardUrl: braipUrl("ev.braip.com", "pla81gzo"),
@@ -98,7 +98,7 @@ const offerDefinitions: Omit<AffiliateOffer, "productImage">[] = [
   },
   {
     id: "five-special",
-    name: "MONJARIM 5 Frascos · Oferta",
+    name: "Monjarim 5 Frascos · Oferta",
     bottles: 5,
     badge: "Oferta especial",
     standardUrl: braipUrl("ev.braip.com", "plaj9go2"),
@@ -106,27 +106,11 @@ const offerDefinitions: Omit<AffiliateOffer, "productImage">[] = [
   },
   {
     id: "three-promo",
-    name: "MONJARIM 3 Frascos PROMO",
+    name: "Monjarim 3 Frascos · Promoção",
     bottles: 3,
     badge: "Promoção",
     standardUrl: braipUrl("ev.braip.com", "plawolg1"),
     adsUrl: braipUrl("pay.braip.co", "plawolg1"),
-  },
-  {
-    id: "single-free-shipping",
-    name: "MONJARIM 1 Frasco FRETE GRÁTIS",
-    bottles: 1,
-    badge: "Frete grátis",
-    standardUrl: braipUrl("ev.braip.com", "plar4o1r"),
-    adsUrl: braipUrl("pay.braip.co", "plar4o1r"),
-  },
-  {
-    id: "single-promo",
-    name: "MONJARIM 1 Frasco AÇÃO PROMOCIONAL",
-    bottles: 1,
-    badge: "Ação promocional",
-    standardUrl: braipUrl("ev.braip.com", "plao4nx6"),
-    adsUrl: braipUrl("pay.braip.co", "plao4nx6"),
   },
 ];
 
