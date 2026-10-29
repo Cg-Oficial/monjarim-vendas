@@ -10,5 +10,5 @@ test("pagina de ofertas direciona ao checkout Braip do plano selecionado", async
   const checkoutPopup = context.waitForEvent("page");
   await page.getByRole("link", { name: "Comprar agora" }).first().click();
   const checkout = await checkoutPopup;
-  await expect(checkout).toHaveURL(/https:\/\/ev\.braip\.com\/ref\?pl=plak8rl2/);
+  await expect(checkout).toHaveURL(/https:\/\/ev\.braip\.com\/checkout\/plak8rl2\/chew4mj1/);
 });

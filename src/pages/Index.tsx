@@ -209,8 +209,8 @@ export default function Home() {
             <h1>Conheça o <strong>Monjarim</strong> e descubra uma nova forma de cuidar de você.</h1>
             <p className="hero-lead"><b>Um suplemento alimentar com ingredientes apresentados pelo fabricante.</b> Conheça a fórmula e confira as informações do rótulo.</p>
             <p className="hero-subline">Informação clara para uma escolha consciente.</p>
-            <a className="btn btn-primary hero-button" href="#compra">Quero emagrecer com Monjarim <ArrowRight size={18} /></a>
-            <p className="hero-caption">Compra finalizada com segurança no checkout da Braip.</p>
+            <a className="btn btn-primary hero-button" href="#compra">Ver opções do Monjarim <ArrowRight size={18} /></a>
+            <p className="hero-caption">Finalize sua compra diretamente no checkout da Braip.</p>
           </div>
           <div className="hero-art" aria-label="Embalagens do suplemento Monjarim">
             <div className="hero-glow" />
@@ -219,9 +219,9 @@ export default function Home() {
             <div className="hero-float float-bottom"><ShieldCheck size={17} /> Checkout Braip</div>
           </div>
           <div className="hero-trust">
-            <span><Truck size={18} /> Frete grátis*</span>
-            <span><ShieldCheck size={18} /> Compra 100% segura</span>
-            <span><Check size={18} /> Garantia conforme a oferta</span>
+            <span><Truck size={18} /> Frete conforme o plano</span>
+            <span><ShieldCheck size={18} /> Checkout Braip</span>
+            <span><Check size={18} /> Condições da oferta</span>
           </div>
           <a href="#produto" className="scroll-cue"><ArrowDown size={15} /> Role para conhecer</a>
         </section>
@@ -262,7 +262,7 @@ export default function Home() {
             <h2>Conheça o produto com informação e autonomia.</h2>
             <p>Monjarim é apresentado pelo fabricante como suplemento alimentar. Confira no rótulo a composição completa e as informações atualizadas antes de decidir.</p>
             <p>Este suplemento não é medicamento e não substitui alimentação equilibrada, acompanhamento profissional ou tratamentos prescritos.</p>
-            <div className="feature-pills"><span><Flame size={16} /> Queima de gordura*</span><span><Zap size={16} /> Mais disposição*</span><span><Leaf size={16} /> Ativos naturais</span><span><Check size={16} /> Sem rebote*</span></div>
+            <div className="feature-pills"><span><Flame size={16} /> Composição</span><span><Zap size={16} /> Informação clara</span><span><Leaf size={16} /> Suplemento alimentar</span><span><Check size={16} /> Compra na Braip</span></div>
             <a className="text-link" href="#formula">Conheça os ingredientes <ArrowRight size={16} /></a>
           </div>
         </section>
@@ -350,7 +350,7 @@ export default function Home() {
           <div className="section-heading centered">
             <span className="eyebrow">OFERTA ESPECIAL</span>
             <h2>Escolha sua opção Monjarim.</h2>
-            <p>Para um resultado eficaz e sem efeito rebote, a página de referência recomenda tratamento de 5 a 10 meses. Preço, frete, estoque e condições devem ser confirmados no checkout Braip antes do pagamento.</p>
+            <p>Compare os planos disponíveis. Preço, frete, estoque e condições devem ser confirmados no checkout Braip antes do pagamento.</p>
           </div>
           <div className="offers-grid">
             {primaryOffers.map((offer) => <OfferCard offer={offer} key={offer.id} />)}
@@ -390,7 +390,7 @@ export default function Home() {
           <div className="footer-column"><strong>Atendimento</strong><a href="mailto:sacmonjarim@gmail.com">sacmonjarim@gmail.com</a><a href="https://mga.phdesenvolvimento.online/rastreio" target="_blank" rel="noopener noreferrer">Rastrear pedido</a><span>Entrega conforme as condições no checkout.</span></div>
         </div>
         <div className="footer-legal"><p>CNPJ: 43.793.013/0001-78 · Monjarim © Copyright 2023–2026</p><p>Este produto não é um medicamento, e sim um suplemento alimentar. As informações apresentadas neste site são informativas e não substituem consulta médica ou nutricional.</p><p>Este site reproduz o material de referência informado pelo proprietário. As condições da oferta são as que aparecem no checkout Braip.</p></div>
-        <div className="footer-bottom"><span>Monjarim</span><span>Links de afiliado · Compra finalizada na Braip</span></div>
+        <div className="footer-bottom"><span>Monjarim</span><span>Página independente de afiliado · Compra finalizada na Braip</span></div>
       </footer>
       <CookieConsent />
       <a className="floating-buy" href="#compra" aria-label="Ir para as ofertas Monjarim"><ShoppingBag size={18} /><span>Ver ofertas</span></a>
