@@ -1,8 +1,11 @@
 import { expect, test } from "@playwright/test";
 
-test("botao de oferta especial leva ao plano e ao checkout Braip", async ({ page, context }) => {
+test("navegacao mobile e oferta especial levam ao plano e ao checkout Braip", async ({ page, context }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Comprar o MONJARIM é fácil." })).toBeVisible();
+  await page.getByRole("navigation", { name: "Navegação principal" }).getByRole("link", { name: "A fórmula" }).click();
+  await expect(page).toHaveURL(/#formula$/);
+  await expect(page.getByRole("heading", { name: "Conheça a fórmula exclusiva de Monjarim." })).toBeVisible();
   await page.getByRole("link", { name: "Oferta especial" }).click();
   await expect(page).toHaveURL(/#melhor-opcao$/);
 
