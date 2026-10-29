@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig(() => ({
-  base: process.env.GITHUB_ACTIONS === "true" ? "/MOUJARIM/" : "/",
+  base: process.env.GITHUB_ACTIONS === "true" ? "/monjarim-vendas/" : "/",
   server: {
     host: "::",
     port: 8080,
