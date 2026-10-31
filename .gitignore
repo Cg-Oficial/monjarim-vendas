@@ -1,10 +1,8 @@
 # ============================================================
 # PADRÃO ULTRA-RIGOROSO DE SEGURANÇA PARA PROJETOS NODE/EXPRESS
-# ============================================================
 
 # ------------------------------------------------------------
 # 1) Dependências e pacotes
-# ------------------------------------------------------------
 node_modules/
 **/node_modules/
 .pnpm-store/
@@ -21,10 +19,7 @@ lerna-debug.log*
 .yarn/install-state.gz
 .yarnrc.yml
 jspm_packages/
-
-# ------------------------------------------------------------
 # 2) Build / dist / artefatos compilados
-# ------------------------------------------------------------
 dist/
 build/
 out/
@@ -62,10 +57,7 @@ storybook-static/
 *.tsbuildinfo
 *.tsbuildinfo.*
 *.map
-
-# ------------------------------------------------------------
 # 3) Variáveis de ambiente / segredos / credenciais
-# ------------------------------------------------------------
 .env
 .env.*
 !.env.example
@@ -83,7 +75,6 @@ storybook-static/
 .env.*.production
 .env.*.staging
 .env.*.test
-
 # Chaves e materiais sensíveis
 *.pem
 *.key
@@ -102,9 +93,7 @@ storybook-static/
 *.asc
 *.gpg
 *.pub
-*.bak
 *.old
-*.orig
 *.saved
 *.cfg.local
 *.local.json
@@ -129,19 +118,11 @@ secret.*
 **/*.secret
 **/*.token
 **/*.private
-
-# ------------------------------------------------------------
 # 4) Logs / runtime / debug / dados de execução
-# ------------------------------------------------------------
 logs/
 log/
 *.log
 *.log.*
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 debug.log*
 *.pid
 *.pid.lock
@@ -162,10 +143,7 @@ tmp/**
 temp/**
 .manus-logs/
 **/.manus-logs/
-
-# ------------------------------------------------------------
 # 5) Metadata / workspace / IA / ferramentas locais
-# ------------------------------------------------------------
 # Pastas comuns de agentes IA, tools locais e metadados
 .ai/
 .aitools/
@@ -219,7 +197,6 @@ conversations/
 **/*.tmp*
 **/*.cache*
 **/*.local*
-
 # Pastas do Manus / IA local
 client/public/__manus__/
 client/public/__manus__/**
@@ -227,10 +204,7 @@ client/public/__manus__/**
 **/__manus__/**
 **/__manus__/**/*
 **/manus-output/**
-
-# ------------------------------------------------------------
 # 6) Editor / IDE / sistema
-# ------------------------------------------------------------
 .vscode/
 .idea/
 *.swp
@@ -256,14 +230,7 @@ Thumbs.db:encryptable
 *.user
 *.userosscache
 *.sln.docstates
-
-# ------------------------------------------------------------
 # 7) Cache local / temporários / banco / dados locais
-# ------------------------------------------------------------
-.cache/
-.parcel-cache/
-.npm/
-.pnpm-store/
 .rustc/
 .python-version
 .node_repl_history
@@ -271,40 +238,19 @@ Thumbs.db:encryptable
 .mypy_cache/
 .ruff_cache/
 .coverage
-coverage/
 htmlcov/
-*.sqlite
-*.sqlite3
-*.db
-*.db-journal
-*.db-shm
-*.db-wal
 *.mdb
 *.ldf
-*.dump
 *.csv
 *.jsonl
 **/*.sqlite
 **/*.sqlite3
 **/*.db
 *.backup
-*.bak
-*.old
-*.orig
-*.snapshot
-*.state
-
-# ------------------------------------------------------------
 # 8) Front-end / web / dev artifacts
-# ------------------------------------------------------------
-.next/
-.nuxt/
 .vuepress/dist/
-.svelte-kit/
 vite.config.ts.timestamp-*
 *.storybook
-.storybook-out/
-out/
 test-results/
 playwright-report/
 playwright/.cache/
@@ -320,28 +266,15 @@ generated/
 mock-data/
 fixtures/local/
 fixtures/.local/
-
-# ------------------------------------------------------------
 # 9) Artefatos internos / ferramentas / backups
-# ------------------------------------------------------------
 .webdev/
-.metas/
 .migration-cache/
-.auto-save/
-.autosave/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.orig
-*.rej
 *.save
-*.saved
-*.backup
-
-# ------------------------------------------------------------
 # 10) Dados sensíveis locais / arquivos de cliente / business data
-# ------------------------------------------------------------
 # Cuidado: só ignore dados locais se eles não forem parte do código público.
 # Em muitos projetos, JSON/CSV são usados como dados públicos; não ignore sem necessidade.
 data/local/
@@ -354,7 +287,27 @@ data/tenant/
 **/data/customers/
 **/data/clients/
 **/data/tenant/
-**/*.csv
 **/*.xlsx
-**/*.json
 **/*.jsonl
+# Logs
+# Dependencies and generated output
+dist-ssr/
+# Environment files and credentials
+*.local
+*.cer
+# Local caches, agents and metadata
+.tmp/
+.dyad/
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Playwright artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/
+.last-run.json
+/e2e-tests/fixtures/dyad/preview-dns.cjs
