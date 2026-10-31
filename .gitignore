@@ -1,14 +1,19 @@
-# ===========================================
-# PADRÃO RÍGIDO DE SEGURANÇA - GITIGNORE
-# ===========================================
+# ============================================================
+# PADRÃO ULTRA-RIGOROSO DE SEGURANÇA PARA PROJETOS NODE/EXPRESS
+# ============================================================
 
-# ---------------------------
-# 1) Dependências / pacotes
-# ---------------------------
+# ------------------------------------------------------------
+# 1) Dependências e pacotes
+# ------------------------------------------------------------
 node_modules/
 **/node_modules/
 .pnpm-store/
 .pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 .npm/
 .npmrc
 .yarn/
@@ -17,9 +22,9 @@ node_modules/
 .yarnrc.yml
 jspm_packages/
 
-# ---------------------------
-# 2) Build / dist / artefatos
-# ---------------------------
+# ------------------------------------------------------------
+# 2) Build / dist / artefatos compilados
+# ------------------------------------------------------------
 dist/
 build/
 out/
@@ -44,6 +49,7 @@ coverage/
 .nuxt/
 .svelte-kit/
 .vite/
+.vite-cache/
 .storybook-static/
 storybook-static/
 .out/
@@ -55,10 +61,11 @@ storybook-static/
 .eslintcache
 *.tsbuildinfo
 *.tsbuildinfo.*
+*.map
 
-# ---------------------------
-# 3) Variáveis de ambiente / segredos
-# ---------------------------
+# ------------------------------------------------------------
+# 3) Variáveis de ambiente / segredos / credenciais
+# ------------------------------------------------------------
 .env
 .env.*
 !.env.example
@@ -68,7 +75,14 @@ storybook-static/
 .env.development.local
 .env.test.local
 .env.production.local
+.env.staging
+.env.production
 .envrc
+.env.*.local
+.env.*.development
+.env.*.production
+.env.*.staging
+.env.*.test
 
 # Chaves e materiais sensíveis
 *.pem
@@ -82,9 +96,26 @@ storybook-static/
 *.secret
 *.token
 *.private
+*.p8
+*.ovpn
+*.mobileprovision
+*.asc
+*.gpg
+*.pub
 *.bak
 *.old
 *.orig
+*.saved
+*.cfg.local
+*.local.json
+*.local.yaml
+*.local.yml
+*.secret.*
+config/*.local.*
+config/local.*
+config/*.secret.*
+**/config/*.local.*
+**/config/*.secret.*
 secrets.*
 secret.*
 **/secrets.*
@@ -98,15 +129,10 @@ secret.*
 **/*.secret
 **/*.token
 **/*.private
-config/*.local.*
-config/local.*
-config/*.secret.*
-**/config/*.local.*
-**/config/*.secret.*
 
-# ---------------------------
-# 4) Logs / runtime / debug
-# ---------------------------
+# ------------------------------------------------------------
+# 4) Logs / runtime / debug / dados de execução
+# ------------------------------------------------------------
 logs/
 log/
 *.log
@@ -128,7 +154,7 @@ debug.log*
 *.db-wal
 *.state
 *.snapshot
-*.bak
+*.dump
 pids/
 tmp/
 temp/
@@ -137,9 +163,74 @@ temp/**
 .manus-logs/
 **/.manus-logs/
 
-# ---------------------------
-# 5) Arquivos locais do editor / sistema
-# ---------------------------
+# ------------------------------------------------------------
+# 5) Metadata / workspace / IA / ferramentas locais
+# ------------------------------------------------------------
+# Pastas comuns de agentes IA, tools locais e metadados
+.ai/
+.aitools/
+.ai-tooling/
+.agent/
+.agentic/
+.tooling/
+workspace/
+workspaces/
+.automation/
+.autosave/
+.auto-save/
+.agent-state/
+ai-output/
+ai-generated/
+generated-output/
+.local-ai/
+.prompt-cache/
+prompt-history/
+chat-history/
+conversation/
+conversations/
+.threads/
+.metas/
+.metadata/
+.metadata-local/
+.manus/
+**/.manus/
+**/.manus/**
+**/.claude/
+**/.cursor/
+**/.codex/
+**/.openai/
+**/.gemini/
+**/.deepseek/
+**/.copilot/
+**/.aider/
+**/.junie/
+**/.opencode/
+**/.chatgpt/
+**/.claude-code/
+**/.gpt/
+**/.ai-agents/
+**/.agentic-tools/
+**/*.prompt*
+**/*.conversation*
+**/*.chatlog*
+**/*.session*
+**/*.state*
+**/*.workspace*
+**/*.tmp*
+**/*.cache*
+**/*.local*
+
+# Pastas do Manus / IA local
+client/public/__manus__/
+client/public/__manus__/**
+**/__manus__/
+**/__manus__/**
+**/__manus__/**/*
+**/manus-output/**
+
+# ------------------------------------------------------------
+# 6) Editor / IDE / sistema
+# ------------------------------------------------------------
 .vscode/
 .idea/
 *.swp
@@ -147,6 +238,7 @@ temp/**
 *~
 *.sublime-workspace
 *.sublime-project
+*.code-workspace
 .DS_Store
 .DS_Store?
 ._*
@@ -156,10 +248,18 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 Thumbs.db:encryptable
+.fleet/
+.vscode-test/
+.history/
+.ionide/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# ---------------------------
-# 6) Estruturas de cache locais
-# ---------------------------
+# ------------------------------------------------------------
+# 7) Cache local / temporários / banco / dados locais
+# ------------------------------------------------------------
 .cache/
 .parcel-cache/
 .npm/
@@ -170,27 +270,33 @@ Thumbs.db:encryptable
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-
-# ---------------------------
-# 7) Arquivos de dados locais / DB / índices
-# ---------------------------
+.coverage
+coverage/
+htmlcov/
 *.sqlite
 *.sqlite3
 *.db
 *.db-journal
+*.db-shm
+*.db-wal
 *.mdb
 *.ldf
-*.bak
 *.dump
 *.csv
 *.jsonl
 **/*.sqlite
 **/*.sqlite3
 **/*.db
+*.backup
+*.bak
+*.old
+*.orig
+*.snapshot
+*.state
 
-# ---------------------------
-# 8) Web / front-end / geração local
-# ---------------------------
+# ------------------------------------------------------------
+# 8) Front-end / web / dev artifacts
+# ------------------------------------------------------------
 .next/
 .nuxt/
 .vuepress/dist/
@@ -206,12 +312,21 @@ cypress/videos/
 cypress/screenshots/
 karma_output/
 e2e-output/
+site-build/
+web-build/
+public/.generated/
+public/assets/generated/
+generated/
+mock-data/
+fixtures/local/
+fixtures/.local/
 
-# ---------------------------
-# 9) Artefatos internos / ferramentas
-# ---------------------------
+# ------------------------------------------------------------
+# 9) Artefatos internos / ferramentas / backups
+# ------------------------------------------------------------
 .webdev/
 .metas/
+.migration-cache/
 .auto-save/
 .autosave/
 __pycache__/
@@ -219,11 +334,27 @@ __pycache__/
 *.pyo
 *.pyd
 *.orig
+*.rej
+*.save
+*.saved
+*.backup
 
-# ---------------------------
-# 10) Manus / versionamento local
-# ---------------------------
-client/public/__manus__/
-client/public/__manus__/**
-**/__manus__/
-**/__manus__/**
+# ------------------------------------------------------------
+# 10) Dados sensíveis locais / arquivos de cliente / business data
+# ------------------------------------------------------------
+# Cuidado: só ignore dados locais se eles não forem parte do código público.
+# Em muitos projetos, JSON/CSV são usados como dados públicos; não ignore sem necessidade.
+data/local/
+data/private/
+data/clients/
+data/customer/
+data/tenant/
+**/data/local/
+**/data/private/
+**/data/customers/
+**/data/clients/
+**/data/tenant/
+**/*.csv
+**/*.xlsx
+**/*.json
+**/*.jsonl
