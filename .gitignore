@@ -1,27 +1,152 @@
-# Dependencies
-**/node_modules
-.pnpm-store/
+# ===========================================
+# PADRÃO RÍGIDO DE SEGURANÇA - GITIGNORE
+# ===========================================
 
-# Build outputs
+# ---------------------------
+# 1) Dependências / pacotes
+# ---------------------------
+node_modules/
+**/node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+.npm/
+.npmrc
+.yarn/
+.yarn-cache/
+.yarn/install-state.gz
+.yarnrc.yml
+jspm_packages/
+
+# ---------------------------
+# 2) Build / dist / artefatos
+# ---------------------------
 dist/
 build/
+out/
+coverage/
+.nyc_output/
 *.dist
+*.tgz
+*.tar
+*.gz
+*.zip
+*.rar
+*.7z
+*.bak
+*.orig
+*.rej
+*.tmp
+*.temp
+*.cache
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+.storybook-static/
+storybook-static/
+.out/
+.storybook-out/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.eslintcache
+*.tsbuildinfo
+*.tsbuildinfo.*
 
-# Environment variables
+# ---------------------------
+# 3) Variáveis de ambiente / segredos
+# ---------------------------
 .env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.envrc
 
-# IDE and editor files
+# Chaves e materiais sensíveis
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.secret
+*.token
+*.private
+*.bak
+*.old
+*.orig
+secrets.*
+secret.*
+**/secrets.*
+**/*.pem
+**/*.key
+**/*.crt
+**/*.p12
+**/*.pfx
+**/*.jks
+**/*.keystore
+**/*.secret
+**/*.token
+**/*.private
+config/*.local.*
+config/local.*
+config/*.secret.*
+**/config/*.local.*
+**/config/*.secret.*
+
+# ---------------------------
+# 4) Logs / runtime / debug
+# ---------------------------
+logs/
+log/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+debug.log*
+*.pid
+*.pid.lock
+*.seed
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.state
+*.snapshot
+*.bak
+pids/
+tmp/
+temp/
+tmp/**
+temp/**
+.manus-logs/
+**/.manus-logs/
+
+# ---------------------------
+# 5) Arquivos locais do editor / sistema
+# ---------------------------
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-
-# OS generated files
+*.sublime-workspace
+*.sublime-project
 .DS_Store
 .DS_Store?
 ._*
@@ -29,85 +154,76 @@ build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
+Thumbs.db:encryptable
 
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-*.bak
-
-# Coverage directory used by tools like istanbul
-coverage/
-*.lcov
-
-# nyc test coverage
-.nyc_output
-
-# Dependency directories
-jspm_packages/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# Next.js build output
-.next
-
-# Nuxt.js build / generate output
-.nuxt
-
-# Gatsby files
+# ---------------------------
+# 6) Estruturas de cache locais
+# ---------------------------
 .cache/
+.parcel-cache/
+.npm/
+.pnpm-store/
+.rustc/
+.python-version
+.node_repl_history
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# Storybook build outputs
-.out
-.storybook-out
-
-# Temporary folders
-tmp/
-temp/
-
-# Database
-*.db
+# ---------------------------
+# 7) Arquivos de dados locais / DB / índices
+# ---------------------------
 *.sqlite
 *.sqlite3
+*.db
+*.db-journal
+*.mdb
+*.ldf
+*.bak
+*.dump
+*.csv
+*.jsonl
+**/*.sqlite
+**/*.sqlite3
+**/*.db
 
-# Webdev artifacts (checkpoint zips, migrations, etc.)
+# ---------------------------
+# 8) Web / front-end / geração local
+# ---------------------------
+.next/
+.nuxt/
+.vuepress/dist/
+.svelte-kit/
+vite.config.ts.timestamp-*
+*.storybook
+.storybook-out/
+out/
+test-results/
+playwright-report/
+playwright/.cache/
+cypress/videos/
+cypress/screenshots/
+karma_output/
+e2e-output/
+
+# ---------------------------
+# 9) Artefatos internos / ferramentas
+# ---------------------------
 .webdev/
+.metas/
+.auto-save/
+.autosave/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.orig
 
-# Manus version file (auto-generated, not part of source)
-client/public/__manus__/version.json
+# ---------------------------
+# 10) Manus / versionamento local
+# ---------------------------
+client/public/__manus__/
+client/public/__manus__/**
+**/__manus__/
+**/__manus__/**
