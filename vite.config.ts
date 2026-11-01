@@ -5,8 +5,8 @@ import path from "path";
 
 import { nitro } from "nitro/vite";
 
-export default defineConfig(({ command }) => ({
-  base: command === "build" ? "./" : "/",
+export default defineConfig(() => ({
+  base: "/monjarim-vendas/",
   server: {
     host: "::",
     port: 8080,
